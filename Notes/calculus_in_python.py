@@ -43,4 +43,9 @@ def get_normalized_function(fun):
 
     return normalized_fun
 
-print(f"The normalization of f(x) is: {get_normalized_function(f, x)}")
+# Get the normalized function
+normalized_fun = get_normalized_function(lambda z: 4 * z)
+
+# Test the normalized function with a specific value of x (e.g., x = 0.5)
+x = 0.5
+print(f"The normalization of f(x) at x={x} is: {normalized_fun(x)}")
