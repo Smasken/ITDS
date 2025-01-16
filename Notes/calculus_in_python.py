@@ -30,22 +30,8 @@ def I(func, n=100000):
 
 print(f"The integral of the function over [0, 1] is: {I(f)}")
 #%%
-from scipy.integrate import quad
-
-# Define the normalization function
 def get_normalized_function(fun):
-    integral = quad(fun, 0, 1)[0]  # Compute integral over [0, 1]
-    normalization_constant = 1 / integral
-
-    # Return the normalized function
-    def normalized_fun(x):
-        return normalization_constant * fun(x)
-
-    return normalized_fun
-
-# Get the normalized function
-normalized_fun = get_normalized_function(lambda z: 4 * z)
+    return lambda x: fun(x) / I(fun)
 
 # Test the normalized function with a specific value of x (e.g., x = 0.5)
-x = 0.5
-print(f"The normalization of f(x) at x={x} is: {normalized_fun(x)}")
+print(f"The normalized f(x) at x={0.5} is: {get_normalized_function(f)(0.5)}")
