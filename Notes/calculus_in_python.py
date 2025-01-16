@@ -21,7 +21,7 @@ print(f"The derivative of the function is: {diff(f_sym, x)}")
 def df(func, x, dx=1e-10):
     return (func(x + dx) - func(x - dx)) / (2 * dx)
 
-print(f"The derivative of the function at x=1 is: {df(f, 0)}")
+print(f"The derivative of the function at x=0 is: {df(f, 0)}")
 #%%
 #INTEGRATE function over [0, 1]
 def I(func, n=100000):
